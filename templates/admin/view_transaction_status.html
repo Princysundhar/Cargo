@@ -1,0 +1,35 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" class="table table-bordered">
+  <tr >
+{#    <th scope="row">Serial number</th>#}
+    <td>USER NAME</td>
+      <td>&nbsp;{{ data.USER.name }}</td></tr>
+    <tr>
+    <td>Payment status</td>
+        <td> {{ data.payment_status }}</td></tr>
+    <tr>
+    <td>Payment date</td>
+        <td> {{ data.date }}</td>
+  </tr>
+{#    {% for i in data %}#}
+
+{#    <th scope="row">&nbsp;{{ forloop.counter }}</th>#}
+
+
+
+
+{#    {% endfor %}#}
+</table>
+</body>
+</html>
+
+{% endblock %}

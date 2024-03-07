@@ -1,0 +1,35 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view_fuel</title>
+</head>
+<body>
+<table width="200" border="1" class="table table-bordered">
+  <tr style="background-color: #FEA116;color: black">
+    <th scope="row">SL.No</th>
+    <td>Fuel Type</td>
+    <td>Wage Per Km</td>
+    <td>Fuel Price</td>
+    <td></td>
+
+  </tr>
+    {% for i in data %}
+
+  <tr>
+    <th scope="row">&nbsp;&nbsp;{{ forloop.counter }}</th>
+    <td>&nbsp;{{ i.fuel_type }}</td>
+    <td>&nbsp;{{ i.wage_per_km }}</td>
+    <td>&nbsp;{{ i.fuel_price}}</td>
+    <td><a href="/fuel_update/{{ i.id}}#aaa" class="btn btn-dark">update</a><br>
+    <br><a href="/fuel_delete/{{ i.id }}" onclick="return confirm('Are you sure?')" class="btn btn-primary">delete</a></td>
+
+  </tr>
+{% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
